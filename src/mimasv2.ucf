@@ -1,0 +1,99 @@
+config vccaux = "3.3";
+net "clk_in" loc = V10 | iostandard = lvcmos33 | period = 100MHz;
+
+# DIP switches
+net "dp_switch(0)" loc = c17 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup;
+net "dp_switch(1)" loc = c18 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup;
+net "dp_switch(2)" loc = d17 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup;
+net "dp_switch(3)" loc = d18 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup;
+net "dp_switch(4)" loc = e18 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup;
+net "dp_switch(5)" loc = e16 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup;
+net "dp_switch(6)" loc = f18 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup;
+net "dp_switch(7)" loc = f17 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup;
+
+# Push button switches
+net "push_switch(0)" loc = m18 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup; 
+net "push_switch(1)" loc = l18 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup; 
+net "push_switch(2)" loc = m16 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup; 
+net "push_switch(3)" loc = l17 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup; 
+net "push_switch(4)" loc = k17 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup; 
+net "push_switch(5)" loc = k18 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup; 
+ 
+# LEDs
+net "led(0)" loc = p15 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "led(1)" loc = p16 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "led(2)" loc = n15 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "led(3)" loc = n16 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "led(4)" loc = u17 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "led(5)" loc = u18 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "led(6)" loc = t17 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "led(7)" loc = t18 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+
+# Seven segment display
+net "seven_segment(0)" loc = a5 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "seven_segment(1)" loc = c6 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "seven_segment(2)" loc = d6 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "seven_segment(3)" loc = c5 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "seven_segment(4)" loc = c4 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "seven_segment(5)" loc = a4 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "seven_segment(6)" loc = b4 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "seven_segment(7)" loc = a3 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "seven_segment_enable(0)" loc = b2 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "seven_segment_enable(1)" loc = a2 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "seven_segment_enable(2)" loc = b3 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+
+# Audio
+net "audio(0)" loc = b16 | iostandard = lvcmos33 | drive = 8 | slew = fast; 
+net "audio(1)" loc = a16 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+ 
+# VGA
+net "vga_hsync" loc = b12 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "vga_vsync" loc = a12 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "vga_r(0)" loc = a9 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "vga_r(1)" loc = b9 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "vga_r(2)" loc = c9 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "vga_g(0)" loc = c10 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "vga_g(1)" loc = a10 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "vga_g(2)" loc = c11 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "vga_b(1)" loc = b11 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "vga_b(2)" loc = a11 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+ 
+# header P6
+net "io_p6(0)" loc = u7 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p6(1)" loc = v7 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p6(2)" loc = t4 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p6(3)" loc = v4 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p6(4)" loc = u5 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p6(5)" loc = v5 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p6(6)" loc = r3 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p6(7)" loc = t3 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+
+# header P7
+net "io_p7(0)" loc = u8 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p7(1)" loc = v8 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p7(2)" loc = r8 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p7(3)" loc = t8 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p7(4)" loc = r5 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p7(5)" loc = t5 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p7(6)" loc = t9 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p7(7)" loc = v9 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+
+# header P8
+net "io_p8(0)" loc = r11 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p8(1)" loc = t11 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p8(2)" loc = r10 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p8(3)" loc = t10 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p8(4)" loc = u13 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p8(5)" loc = v13 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p8(6)" loc = u11 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p8(7)" loc = v11 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+
+# header P9
+net "io_p9(0)" loc = h17 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p9(1)" loc = h18 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p9(2)" loc = j16 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p9(3)" loc = j18 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p9(4)" loc = k15 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p9(5)" loc = k16 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p9(6)" loc = l15 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+net "io_p9(7)" loc = l16 | iostandard = lvcmos33 | drive = 8 | slew = fast;
