@@ -10,8 +10,9 @@ Prerequisites
 -------------
 
   1. Have [Xilinx ISE WebPACK](https://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html) installed. You need to register, but the program itself is free to use. Note that the Spartan 6 FPGA which is on the Mimas V2 is not supported by the newer Vivado Design Suite, so you really need Xilinx ISE, even though Xilinx recommends new projects to use Vivado Design Suite. Download it [here](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive-ise.html).
-  2. Have the USB CDC drivers for windows installed. They can be downloaded from Numato [here](https://numato.com/wp-content/uploads/2019/06/numatocdcdriver.zip).
-  3. Have the configuration tool for windows available. It can be downloaded from Numato [here](https://productdata.numato.com/assets/downloads/fpga/mimasv2/mimasv2_configuration_tool_windows.exe).
+  2. Have the configuration tool for windows available. It can be downloaded from Numato [here](https://productdata.numato.com/assets/downloads/fpga/mimasv2/mimasv2_configuration_tool_windows.exe).
+  
+(Before this also mentioned downloading and installing USB CDC drivers, but this doesn't seem to be necessary anymore)
 
 
 How to build this project
