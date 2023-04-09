@@ -1,5 +1,69 @@
+# modified from https://productdata.numato.com/assets/downloads/fpga/mimasv2/mimasv2_user_constraints_file.ucf
+
 config vccaux = "3.3";
+
+# clocks
 net "clk_in" loc = V10 | iostandard = lvcmos33 | period = 100MHz;
+# net "clk_in" loc = D9 | iostandard = lvcmos33 | period = 12MHz;
+
+
+# UART interface
+# net "uart_tx" loc = A8 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+# net "uart_rx" loc = B8 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+
+# SPI flash
+# net "sdi" loc = T13 | iostandard = lvcmos33 | slew = fast | drive = 8;   # MOSI
+# net "sdo" LOC = R13 | iostandard = lvcmos33 | slew = fast | drive = 8;   # MISO
+# net "sclk" LOC = R15 | iostandard = lvcmos33 | slew = fast | drive = 8;  # SCK
+# net "cs" LOC = V3 | iostandard = lvcmos33 | slew = fast | drive = 8;     # CS
+
+# LPDDR MT46H32M16XXXX-5
+# net  "calib_done" loc = P15 | iostandard = lvcmos33;
+# net  "error" loc = P16 | iostandard = lvcmos33;
+# net  "c3_sys_rst_n" loc = L15 | iostandard = lvcmos33 | pulldown;    # Pin 7 of Header P9
+
+# net "mcb3_dram_a(0)" loc = J7 | iostandard = mobile_ddr;
+# net "mcb3_dram_a(10)" loc = F4 | iostandard = mobile_ddr;
+# net "mcb3_dram_a(11)" loc = D3 | iostandard = mobile_ddr;
+# net "mcb3_dram_a(12)" loc = G6 | iostandard = mobile_ddr;
+# net "mcb3_dram_a(1)" loc = J6 | iostandard = mobile_ddr;
+# net "mcb3_dram_a(2)" loc = H5 | iostandard = mobile_ddr;
+# net "mcb3_dram_a(3)" loc = L7 | iostandard = mobile_ddr;
+# net "mcb3_dram_a(4)" loc = F3 | iostandard = mobile_ddr;
+# net "mcb3_dram_a(5)" loc = H4 | iostandard = mobile_ddr;
+# net "mcb3_dram_a(6)" loc = H3 | iostandard = mobile_ddr;
+# net "mcb3_dram_a(7)" loc = H6 | iostandard = mobile_ddr;
+# net "mcb3_dram_a(8)" loc = D2 | iostandard = mobile_ddr;
+# net "mcb3_dram_a(9)" loc = D1 | iostandard = mobile_ddr;
+# net "mcb3_dram_ba(0)" loc = F2 | iostandard = mobile_ddr;
+# net "mcb3_dram_ba(1)" loc = F1 | iostandard = mobile_ddr;
+# net "mcb3_dram_cas_n" loc = K5 | iostandard = mobile_ddr;
+# net "mcb3_dram_ck" loc = G3 | iostandard = diff_mobile_ddr;
+# net "mcb3_dram_ck_n" loc = G1 | iostandard = diff_mobile_ddr;
+# net "mcb3_dram_cke" loc = H7 | iostandard = mobile_ddr;
+# net "mcb3_dram_dm" loc = K3 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(0]" loc = L2 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(10]" loc = N2 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(11]" loc = N1 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(12]" loc = T2 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(13]" loc = T1 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(14]" loc = U2 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(15]" loc = U1 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(1]" loc = L1 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(2]" loc = K2 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(3]" loc = K1 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(4]" loc = H2 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(5]" loc = H1 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(6]" loc = J3 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(7]" loc = J1 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(8]" loc = M3 | iostandard = mobile_ddr;
+# net "mcb3_dram_dq(9]" loc = M1 | iostandard = mobile_ddr;
+# net "mcb3_dram_dqs" loc = L4 | iostandard = mobile_ddr;
+# net "mcb3_dram_ras_n" loc = L5 | iostandard = mobile_ddr;
+# net "mcb3_dram_udm" loc = K4 | iostandard = mobile_ddr;
+# net "mcb3_dram_udqs" loc = P2 | iostandard = mobile_ddr;
+# net "mcb3_dram_we_n" loc = E3 | iostandard = mobile_ddr;
+# net "mcb3_rzq" loc = N4 | iostandard = mobile_ddr;
 
 # DIP switches
 net "dp_switch(0)" loc = c17 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup;
@@ -11,7 +75,7 @@ net "dp_switch(5)" loc = e16 | iostandard = lvcmos33 | drive = 8 | slew = fast |
 net "dp_switch(6)" loc = f18 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup;
 net "dp_switch(7)" loc = f17 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup;
 
-# Push button switches
+# push button switches
 net "push_switch(0)" loc = m18 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup; 
 net "push_switch(1)" loc = l18 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup; 
 net "push_switch(2)" loc = m16 | iostandard = lvcmos33 | drive = 8 | slew = fast | pullup; 
@@ -29,7 +93,17 @@ net "led(5)" loc = u18 | iostandard = lvcmos33 | drive = 8 | slew = fast;
 net "led(6)" loc = t17 | iostandard = lvcmos33 | drive = 8 | slew = fast;
 net "led(7)" loc = t18 | iostandard = lvcmos33 | drive = 8 | slew = fast;
 
-# Seven segment display
+#                                                   Micro SD Card                                                                                 #
+###################################################################################################################################################
+# SD card
+# net "sd_data(0)" LOC = K14 | iostandard = lvcmos33 | drive = 8 | slew = fast;  # MISO
+# net "sd_data(1)" LOC = G18 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+# net "sd_data(2)" LOC = J13 | iostandard = lvcmos33 | drive = 8 | slew = fast;
+# net "sd_data(3)" LOC = L13 | iostandard = lvcmos33 | drive = 8 | slew = fast;  # CS
+# net "sd_cmd" LOC = G16 | iostandard = lvcmos33 | drive = 8 | slew = fast;      # MOSI
+# net "sd_clk" LOC = L12 | iostandard = lvcmos33 | drive = 8 | slew = fast;      # CLK
+
+# seven segment display
 net "seven_segment(0)" loc = a5 | iostandard = lvcmos33 | drive = 8 | slew = fast;
 net "seven_segment(1)" loc = c6 | iostandard = lvcmos33 | drive = 8 | slew = fast;
 net "seven_segment(2)" loc = d6 | iostandard = lvcmos33 | drive = 8 | slew = fast;
@@ -42,7 +116,7 @@ net "seven_segment_enable(0)" loc = b2 | iostandard = lvcmos33 | drive = 8 | sle
 net "seven_segment_enable(1)" loc = a2 | iostandard = lvcmos33 | drive = 8 | slew = fast;
 net "seven_segment_enable(2)" loc = b3 | iostandard = lvcmos33 | drive = 8 | slew = fast;
 
-# Audio
+# audio
 net "audio(0)" loc = b16 | iostandard = lvcmos33 | drive = 8 | slew = fast; 
 net "audio(1)" loc = a16 | iostandard = lvcmos33 | drive = 8 | slew = fast;
  
